@@ -24,6 +24,85 @@ We will apply regression analysis to predict the final grade (G3) based on the i
 Using the results of the regression and classification models, we will identify the most important predictors of student performance.
 The findings will be used to generate recommendations for educational interventions, such as targeted tutoring or family outreach, based on the identified factors influencing student grades.
 
+## Corelation heatmap to show co-relations between the variables
+![image](https://github.com/user-attachments/assets/b97f43ed-8ba7-4b58-9dec-2187854303d8)
+
+G1, G2, and G3 (which represent grades) show strong positive correlations with each other, as indicated by the dark red squares. Other notable correlations can be observed between Medu (mother's education) and Fedu (father's education), and between goout (going out with friends) and Dalc (workday alcohol consumption).
+
+## box plots to check whether the final grades are based on gender and parents education level
+![image](https://github.com/user-attachments/assets/6933894d-ab79-4c65-84ea-1bd39a25e989)
+
+![image](https://github.com/user-attachments/assets/4be87c6b-2b40-4194-b675-96f1a7ee8e7b)
+
+#### Final Grades By Gender Boxplot
+The box plot suggests that there is no significant difference in the distribution of final grades between females and males. Both genders have similar median grades, variability (IQR), and overall grade ranges. This indicates a comparable academic performance across genders in this dataset
+
+### Final Grades By Mother's Eductaion Level
+The box plot illustrates the distribution of final grades (G3) of students based on their mother's education level (Medu), which ranges from 0 (no education) to 4 (higher education). Let's break down the interpretation for each education level.The box plot indicates a positive correlation between a mother's education level and the student's final grades:
+
+1. As the mother's education level increases, the median final grade also tends to increase.
+
+2. The interquartile range (IQR) shows that higher education levels are associated with higher average grades.
+
+3. The presence of outliers at higher education levels indicates that some students achieve exceptionally high grades.
+   
+## Confusion Matric to check the accuracy of the regression model.
+![image](https://github.com/user-attachments/assets/14a39a85-d51c-4402-8823-61bd7548ff35)
+
+1. True Positives (TP): 229 - Instances where the model correctly predicted class 1.
+
+2. True Negatives (TN): 53 - Instances where the model correctly predicted class 0.
+
+3. False Positives (FP): 26 - Instances where the model incorrectly predicted class 1 for actual class 0.
+
+4. False Negatives (FN): 6 - Instances where the model incorrectly predicted class 0 for actual class 1.
+
+## To Evaluate the regression model
+![image](https://github.com/user-attachments/assets/68fc3f6d-609a-4f17-b581-e36f24a848e2)
+
+Regression Metrics:
+R² Score: 0.808580417525745
+Mean Squared Error: 2.839974203821656
+
+R² Score: An R² score of 0.8086 suggests the model has strong explanatory power. The model's predictions capture about 80.86% of the variability in the actual grades.
+
+Mean Squared Error: A Mean Squared Error (MSE) of 2.8400 indicates the average squared difference between the actual and predicted grades. The closer this value is to 0, the more accurate the model is.
+
+Data Points: Clustering Around the Diagonal: Many of the points are clustered close to the diagonal line, indicating that the model's predictions are fairly accurate.
+
+Deviations: Points further away from the diagonal suggest instances where the model's predictions deviate more significantly from the actual grades.
+
+
+## Feature importance of classification
+![image](https://github.com/user-attachments/assets/b49b850d-adfb-466d-8ac7-c920cd5ec8c5)
+
+The chart illustrates that grades from the first and second grading periods (G1 and G2) are the most significant predictors, reflecting their high correlation with the classification outcome. Other features like past failures, absences, and age also contribute but to a lesser extent 
+
+
+## Feature importance of Regression
+![image](https://github.com/user-attachments/assets/b2e3bf95-b7d1-4232-b59f-f4d26d90b1b7)
+
+The chart highlights that the final grade in the second period (G2) is the most influential predictor in the model. Absences also have a modest impact, while other features such as sex, age, health, and parental jobs have minimal influence. This suggests that academic performance in the second period and student attendance are the primary factors in determining the target outcome.
+
+
+![image](https://github.com/user-attachments/assets/3127e8f3-909f-43d8-9f80-a9b005541499)
+
+This graph shows which factors are most important for predicting the final grade (`G3`). The second period grade (`G2`) is the most important factor by far. Other factors like absences and parents' jobs matter a little, but not nearly as much. This means how well a student did in the second period strongly affects their final grade.
+
+## Decision Tree 
+![image](https://github.com/user-attachments/assets/20628905-54f3-4543-ba1a-c6e46ab72eaa)
+
+## To evaluate the decision tree model
+![image](https://github.com/user-attachments/assets/5d537a29-faae-48f9-99fa-648706962d15)
+
+
+<font color="red">This chart compares the actual grades (G3) with the grades predicted by the model. 
+
+- <font color="red">The red dashed line shows perfect predictions. If all points were on this line, the model's predictions would match the actual grades exactly.
+- <font color="red">Most points are close to the line, meaning the model predicts grades quite well for most students.
+- <font color="red">Some points are far from the line, showing where the model's predictions are less accurate.
+- <font color="red">Overall, the chart shows a positive trend, meaning the model predicts higher grades for students with higher actual grades, which <font color="red">is a good sign. However, there is still room to improve accuracy.
+
 
 # Conclusion
 The project achieved its objective of developing a predictive model to forecast students' final grades and identifying key factors influencing academic performance. The analysis demonstrated that demographic details, family background, and study habits are significant predictors. For example, while gender showed no notable differences in academic performance, maternal education levels positively correlated with higher final grades, emphasizing the role of parental influence in student achievement.
